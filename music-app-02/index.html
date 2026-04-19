@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MP3 Player</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div>
+          <h1><i class="fa-brands fa-spotify" style="color: #1DB954; margin-right: 8px;"></i>Spotify</h1>
+        </div>
+
+        <label class="upload-label">
+          <span>Upload MP3 <i class="fa-solid fa-cloud-arrow-up" style="margin-left: 8px;"></i></span>
+          <input id="fileInput" type="file" accept=".mp3,audio/mpeg" multiple />
+        </label>
+      </header>
+
+      <main class="main-layout">
+        <section class="playlist-panel panel">
+          <div class="panel-header">
+            <h2>Playlist</h2>
+            <span id="playlistCount" class="muted-text">0 bài hát</span>
+          </div>
+
+          <div id="songList" class="song-list">
+            <p class="empty-text">Chưa có dữ liệu. Hãy upload file mp3.</p>
+          </div>
+        </section>
+
+        <section class="player-panel panel">
+          <div class="panel-header">
+            <h2>Now Playing</h2>
+          </div>
+
+          <div class="cover-box">
+            <div class="fake-cover">
+              <span>♪</span>
+            </div>
+          </div>
+
+          <div class="current-song-box">
+            <p id="currentSongName" class="current-song-name">
+              Chưa có bài hát nào được chọn
+            </p>
+            <p class="muted-text">Local Music Player</p>
+          </div>
+
+          <div class="control-group">
+            <button id="togglePlayBtn" class="btn btn-primary">Play</button>
+            <button id="playFavoritesBtn" class="btn">Play Favorites</button>
+            <button id="shuffleFavoritesBtn" class="btn">
+              Shuffle Favorites
+            </button>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="muted-text">Tổng bài hát</span>
+              <strong id="totalSongs">0</strong>
+            </div>
+            <div class="stat-card">
+              <span class="muted-text">Favorite</span>
+              <strong id="totalFavorites">0</strong>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="bottom-player">
+        <div class="bottom-player-info">
+          <p class="bottom-title">Player</p>
+          <p id="bottomCurrentSong" class="bottom-song-name">
+            Chưa có bài nào được phát
+          </p>
+        </div>
+
+        <audio id="audioPlayer" controls class="audio-player"></audio>
+      </footer>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
